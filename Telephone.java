@@ -1,7 +1,7 @@
-public class Telephone {
+public class Telephone extends CommunicationDevice{
     private String phoneNumber;
 
-    Telephone(String phoneNumber) {
+    public Telephone(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -24,5 +24,10 @@ public class Telephone {
     @Override
     public String toString() {
         return "Phone number: " + phoneNumber;
+    }
+
+    @Override
+    public void greet() {
+        System.out.println("Moshi moshi");
     }
 }

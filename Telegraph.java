@@ -1,10 +1,10 @@
-public class Telegraph {
+public class Telegraph extends CommunicationDevice{
     private String name = "Telegraph Object";
 
-    Telegraph() {
+    public Telegraph() {
     };
 
-    Telegraph(String name) {
+    public Telegraph(String name) {
         this.name = name;
     }
 
@@ -28,7 +28,7 @@ public class Telegraph {
             "--..--" , ".-.-.-" , "..--.." , "-.-.-." , "---..." ,
             "-..-." , "-....-" , ".----." , "-.--." , "-.--.-" ,
             "..--.-" , ".--.-." , "-.-.--" , ".-..." , "-...-" ,
-            ".-.-." , ".-..-." , "...-..-", "/" };
+            ".-.-." , ".-..-." , "...-..-", "/", "//" };
 
     final char[] letter = {
             'a', 'b', 'c', 'd', 'e',
@@ -41,7 +41,7 @@ public class Telegraph {
             ',', '.', '?', ';', ':',
             '/', '-', '\'', '(', ')',
             '_', '@', '!', '&', '=',
-            '+', '"', '$' , ' '};
+            '+', '"', '$' , ' ', '\n'};
 
     public String morseToLatin(String morseCode) {
         String[] characters = morseCode.split(" ");
@@ -73,6 +73,16 @@ public class Telegraph {
         }
 
         return morseMsg.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Telegraph [name=" + name + "]";
+    }
+
+    @Override
+    public void greet() {
+        System.out.println(latinToMorse("HELLO!"));
     }
 
 }

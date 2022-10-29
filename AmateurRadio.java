@@ -1,19 +1,23 @@
-public class AmateurRadio {
+public class AmateurRadio extends CommunicationDevice {
     private String callSign;
     private Long freq = 472_000L;
     private int tone = 550;
 
-    AmateurRadio(String callSign, Long freq) {
+    public AmateurRadio(String callSign, Long freq) {
         this.callSign = callSign;
         this.freq = freq;
     }
 
-    AmateurRadio(String callSign) {
+    public AmateurRadio(String callSign) {
         this.callSign = callSign;
     }
 
     public void startContact() {
         System.out.printf("CQ CQ CQ DE %s", callSign); // seek you x3, from {callSign}
+    }
+
+    public void sendMessage(String message) {
+        System.out.println(message);
     }
 
     public void endContact() {
@@ -47,6 +51,11 @@ public class AmateurRadio {
     @Override
     public String toString() {
         return "AmateurRadio [callSign=" + callSign + ", freq=" + freq + ", tone=" + tone + "]";
+    }
+
+    @Override
+    public void greet() {
+        sendMessage("DE "+ callSign + " IM GUD HW K");
     }
 
 }

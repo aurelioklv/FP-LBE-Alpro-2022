@@ -1,12 +1,12 @@
 public class MobilePhone extends Telephone {
     private String serialNumber;
 
-    MobilePhone(String phoneNumber, String serialNumber) {
+    public MobilePhone(String phoneNumber, String serialNumber) {
         super(phoneNumber);
         this.serialNumber = serialNumber;
     }
 
-    MobilePhone(String phoneNumber) {
+    public MobilePhone(String phoneNumber) {
         super(phoneNumber);
     }
 
